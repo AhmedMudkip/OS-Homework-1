@@ -3,8 +3,9 @@
 int main() {
     int process_count;
 
-    std::cout << "Enter the number of processes: ";
+    std::cout << "Enter total number of processes(maximum 10): ";
     std::cin >> process_count;
+    std::cout << std::endl;
 
     // Number of processes not more than 10 processes
     if (process_count > 10) {
@@ -13,20 +14,21 @@ int main() {
             std::cin >> process_count;
        }
     }
-    std::cout << "Number of processes entered: " << process_count << std::endl;
+//  DEBUG: print process count
+//  std::cout << "Number of processes entered: " << process_count << std::endl;
 
     int burst_times[process_count];
-
     // The CPU time required by each process (Burst Time)
+    std::cout << "Enter Process Burst Time" << std::endl;
     for (int i = 0; i < process_count; i++) {
-        std::cout << "Enter the burst time for process #" << i+1 << std::endl;
+        std::cout << "P[" << i+1 << "]: ";
         std::cin >> burst_times[i];
     }
 
     // DEBUG: print burst times
-    for (int i = 0; i < process_count; i++) {
-       std::cout << "Burst time for Process #" << i+1 << " " << burst_times[i] << std::endl;
-    }
+//  for (int i = 0; i < process_count; i++) {
+//     std::cout << "Burst time for Process #" << i+1 << " " << burst_times[i] << std::endl;
+//  }
 
 
 }
