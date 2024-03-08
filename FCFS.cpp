@@ -4,6 +4,8 @@ int main() {
     int process_count;
     int waiting_time = 0;
     int turnaround_time = 0;
+    int avg_waiting = 0;
+    int avg_turnaround = 0;
 
     std::cout << "Enter total number of processes(maximum 10): ";
     std::cin >> process_count;
@@ -42,6 +44,15 @@ int main() {
         std::cout << "\t\t" << waiting_time;
         std::cout << "\t\t" << turnaround_time << std::endl;
 
+        avg_waiting += waiting_time;
         waiting_time += burst_times[i];
+        avg_turnaround += turnaround_time;
     }
+    std::cout << std::endl;
+
+    avg_waiting /= process_count;
+    avg_turnaround /= process_count;
+
+    std::cout << "Average Waiting Time: " << avg_waiting << std::endl;
+    std::cout << "Average Turnaround Time: " << avg_turnaround << std::endl;
 }
