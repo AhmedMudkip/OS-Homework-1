@@ -7,14 +7,14 @@ int main() {
     int avg_waiting = 0;
     int avg_turnaround = 0;
 
-    std::cout << "Enter total number of processes(maximum 10): ";
+    std::cout << "Enter total number of processes(maximum 10):";
     std::cin >> process_count;
     std::cout << std::endl;
 
     // Number of processes not more than 10 processes
     if (process_count > 10) {
         while (process_count > 10) {
-            std::cout << "Please enter 10 processes." << std::endl;
+            std::cout << "Please enter a maximum of 10 processes." << std::endl;
             std::cin >> process_count;
        }
     }
@@ -25,7 +25,7 @@ int main() {
     // The CPU time required by each process (Burst Time)
     std::cout << "Enter Process Burst Time" << std::endl;
     for (int i = 0; i < process_count; i++) {
-        std::cout << "P[" << i+1 << "]: ";
+        std::cout << "P[" << i+1 << "]:";
         std::cin >> burst_times[i];
     }
     std::cout << std::endl;
@@ -39,7 +39,7 @@ int main() {
     std::cout << "Process" << "\t\t" << "Burst Time" << "\t"
               << "Waiting Time" << "\t" << "Turnaround Time" << std::endl;
     for (int i = 0; i < process_count; i++) {
-        std::cout << "P[" << i+1 << "]: " << "\t\t" << burst_times[i];
+        std::cout << "P[" << i+1 << "] " << "\t\t" << burst_times[i];
         turnaround_time += burst_times[i];
         std::cout << "\t\t" << waiting_time;
         std::cout << "\t\t" << turnaround_time << std::endl;
@@ -53,6 +53,6 @@ int main() {
     avg_waiting /= process_count;
     avg_turnaround /= process_count;
 
-    std::cout << "Average Waiting Time: " << avg_waiting << std::endl;
-    std::cout << "Average Turnaround Time: " << avg_turnaround << std::endl;
+    std::cout << "Average Waiting Time:" << avg_waiting << std::endl;
+    std::cout << "Average Turnaround Time:" << avg_turnaround << std::endl;
 }
